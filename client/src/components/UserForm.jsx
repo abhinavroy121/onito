@@ -26,6 +26,7 @@ const UserForm = () => {
     const {
         register,
         handleSubmit,
+        reset,
         formState: {errors},
     } = useForm({resolver: yupResolver(validationSchema)});
 
@@ -39,7 +40,8 @@ const UserForm = () => {
 
     return (
         <div className="h-auto bg-gray-300">
-            <p  className="text-2xl font-bold text-left ml-3 mb-5 border-b-2">User Information Form</p>
+<span className="flex flex-row justify-between">            <p  className="text-2xl font-bold text-left ml-3 mb-5 border-b-2">User Information Form</p>         <button onClick={()=> navigate("/usertable")} className="bg-black rounded text-white py-2 px-2 m-auto">View Patient Table</button>
+</span>
             <form onSubmit={handleSubmit(formSubmit)}>
                 <div >
                     <p className="text-xl text-bold text-left ml-3 border-b-2">
@@ -251,9 +253,9 @@ const UserForm = () => {
                             />
                         </div>
                     </div>
-                    <div className="w-60 flex gap-4">
-                        <button >Cancel</button>
-                        <input className="bg-green-300 px-2 py-1 rounded cursor-pointer" type="submit" />
+                    <div className="w-full flex justify-end gap-20 py-5 px-4">
+                        <button className="bg-red-300 py-2 px-3 rounded cursor-pointer" onClick = {()=>  reset(formValues => ({name: "",age: "",sex: "",mobile: "",issueid: "", govtid: "", guardianlabel: "",guardian: "",email: "",contact: "",address: "",state: "", city: "" , country: "",pincode: "",occupation: "",religion: "",maritalStatus: "",bloodgroup: "",nationality: ""}))}>Cancel</button>
+                        <input className="bg-black text-white px-3 py-2 rounded cursor-pointer" type="submit" />
                     </div>
                 </div>
             </form>

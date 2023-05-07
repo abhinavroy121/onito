@@ -3,7 +3,7 @@ import UserForm from '../components/UserForm'
 
 const FormPage = () => {
   return (
-    <div>
+    <div>      
         <UserForm />
     </div>
   )
