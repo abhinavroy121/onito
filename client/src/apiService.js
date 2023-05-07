@@ -1,6 +1,6 @@
 export async function postApi(payload) {
     try {
-        let response = await fetch("http://localhost:8000/api/adduserdata", {
+        let response = await fetch("https://pear-fierce-lovebird.cyclic.app/api/adduserdata", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -18,7 +18,7 @@ export async function postApi(payload) {
 
 export async function getApi() {
     try {
-        let response = await fetch("http://localhost:8000/api/userdata");
+        let response = await fetch("https://pear-fierce-lovebird.cyclic.app/api/userdata");
 
         let data = response.json();
            console.log(data)
